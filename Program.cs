@@ -13,10 +13,11 @@ class Program
             Console.WriteLine("2. Задача 4: Найти максимальное число из трех введенных чисел.");
             Console.WriteLine("3. Задача 6: Проверка числа на четность.");
             Console.WriteLine("4. Задача 8: Вывести четные числа от 1 до N.");
+            Console.WriteLine("5. Задача 23: Вывести таблицу кубов чисел от 1 до N.");
             Console.WriteLine("0. Выход");
             Console.WriteLine();
 
-            Console.Write("Введите номер задачи (0-4): ");
+            Console.Write("Введите номер задачи (0-5): ");
             choice = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
@@ -34,6 +35,9 @@ class Program
                     break;
                 case 4:
                     Task8();
+                    break;
+                case 5:
+                    Task23();
                     break;
                 case 0:
                     Console.WriteLine("Программа завершена.");
@@ -192,6 +196,24 @@ class Program
         for (int i = 2; i <= n; i += 2)
         {
             Console.Write(i + " ");
+        }
+
+        Console.WriteLine();
+    }
+
+    static void Task23()
+    {
+        int N;
+
+        Console.Write("Введите число N: ");
+        N = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Таблица кубов чисел от 1 до " + N + ": ");
+
+        for (int i = 1; i <= N; i++)
+        {
+            int cube = i * i * i;
+            Console.Write(cube + " ");
         }
 
         Console.WriteLine();
