@@ -13,11 +13,14 @@ class Program
             Console.WriteLine("2. Задача 4: Найти максимальное число из трех введенных чисел.");
             Console.WriteLine("3. Задача 6: Проверка числа на четность.");
             Console.WriteLine("4. Задача 8: Вывести четные числа от 1 до N.");
-            Console.WriteLine("5. Задача 23: Вывести таблицу кубов чисел от 1 до N.");
+            //Console.WriteLine("5. Задача 23: Вывести таблицу кубов чисел от 1 до N.");
+            Console.WriteLine("6. Задача 10: Вывести вторую цифру трехзначного числа.");
+            Console.WriteLine("7. Задача 13: С помощью деления вывести третью цифру заданного числа или сообщить, что третьей цифры нет.");
+            Console.WriteLine("8. Задача 15: Принимать на вход цифру, обозначающую день недели, и проверять, является ли этот день выходным.");
             Console.WriteLine("0. Выход");
             Console.WriteLine();
 
-            Console.Write("Введите номер задачи (0-5): ");
+            Console.Write("Введите номер задачи (0-8): ");
             choice = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
@@ -36,8 +39,17 @@ class Program
                 case 4:
                     Task8();
                     break;
-                case 5:
-                    Task23();
+                //case 5:
+                    //Task23();
+                    //break;
+                case 6:
+                    Task10();
+                    break;
+                case 7:
+                    Task13();
+                    break;
+                case 8:
+                    Task15();
                     break;
                 case 0:
                     Console.WriteLine("Программа завершена.");
@@ -201,7 +213,7 @@ class Program
         Console.WriteLine();
     }
 
-    static void Task23()
+    /*static void Task23()
     {
         int N;
 
@@ -217,5 +229,54 @@ class Program
         }
 
         Console.WriteLine();
+    }*/
+    static void Task10()
+    {
+        int number;
+
+        Console.Write("Введите трехзначное число: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        int secondDigit = (number / 10) % 10;
+
+        Console.WriteLine("Вторая цифра числа: " + secondDigit);
+    }
+    static void Task13()
+    {
+        int number;
+
+        Console.Write("Введите число: ");
+        number = Convert.ToInt32(Console.ReadLine());
+
+        int thirdDigit = (number / 100) % 10;
+
+        if (thirdDigit != 0)
+        {
+            Console.WriteLine("Третья цифра числа: " + thirdDigit);
+        }
+        else
+        {
+            Console.WriteLine("Третьей цифры нет");
+        }
+    }
+    static void Task15()
+    {
+        int dayOfWeek;
+
+        Console.Write("Введите цифру, обозначающую день недели: ");
+        if (!int.TryParse(Console.ReadLine(), out dayOfWeek) || dayOfWeek < 1 || dayOfWeek > 7)
+        {
+            Console.WriteLine("Некорректный ввод. Пожалуйста, введите цифру от 1 до 7.");
+            return;
+        }
+
+        if (dayOfWeek == 6 || dayOfWeek == 7)
+        {
+            Console.WriteLine("Да, это выходной день");
+        }
+        else
+        {
+            Console.WriteLine("Нет, это не выходной день");
+        }
     }
 }
