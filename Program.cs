@@ -1,60 +1,13 @@
 ﻿using System;
  
-public class Tasks
+class Program
 {
-    public static void PerformTask(int choice)
-    {
-        switch (choice)
+        static void Main()
         {
-            case 1:
-                Task2();
-                break;
-            case 2:
-                Task4();
-                break;
-            case 3:
-                Task6();
-                break;
-            case 4:
-                Task8();
-                break;
-            case 5:
-                Task23();
-                break;
-            case 6:
-                Task10();
-                break;
-            case 7:
-                Task13();
-                break;
-            case 8:
-                Task15();
-                break;
-            case 9:
-                Task19();
-                break;
-            case 10:
-                Task21();
-                break;
-            case 11:
-                Task25();
-                break;
-            case 12:
-                Task27();
-                break;
-            case 13:
-                Task29();
-                break;
-            case 0:
-                Console.WriteLine("Программа завершена.");
-                break;
-            default:
-                Console.WriteLine("Некорректный выбор. Попробуйте еще раз.");
-                break;
+            Menu.ShowMenu();
         }
-    }
 
-    static void Task2()
+    public static void Task2()
     {
         int a = 5;
         int b = 7;
@@ -110,7 +63,7 @@ public class Tasks
         Console.WriteLine("a = " + a + "; b = " + b + " -> min = " + min);
     }
 
-    static void Task4()
+    public static void Task4()
     {
         int num1 = 2;
         int num2 = 3;
@@ -168,7 +121,7 @@ public class Tasks
     }
 
 
-    static void Task6()
+    public static void Task6()
     {
         int number;
 
@@ -185,7 +138,7 @@ public class Tasks
         }
     }
 
-    static void Task8()
+    public static void Task8()
     {
         int n;
 
@@ -202,7 +155,7 @@ public class Tasks
         Console.WriteLine();
     }
 
-    static void Task23()
+    public static void Task23()
     {
         int N;
 
@@ -220,7 +173,7 @@ public class Tasks
         Console.WriteLine();
     }
 
-    static void Task10()
+    public static void Task10()
     {
         int number;
 
@@ -231,7 +184,7 @@ public class Tasks
 
         Console.WriteLine("Вторая цифра числа: " + secondDigit);
     }
-    static void Task13()
+    public static void Task13()
     {
         int number;
 
@@ -249,7 +202,7 @@ public class Tasks
             Console.WriteLine("Третьей цифры нет");
         }
     }
-    static void Task15()
+    public static void Task15()
     {
         int dayOfWeek;
 
@@ -270,7 +223,7 @@ public class Tasks
         }
     }
 
-    static void Task19()
+    public static void Task19()
     {
         int number;
 
@@ -303,7 +256,7 @@ public class Tasks
         return true;
     }
 
-    static void Task21()
+    public static void Task21()
     {
         Console.WriteLine("Введите координаты точки A:");
         double x1 = Convert.ToDouble(Console.ReadLine());
@@ -330,7 +283,7 @@ public class Tasks
 
         return distance;
     }
-    static void Task25()
+    public static void Task25()
     {
         Console.Write("Введите число A: ");
         int A = Convert.ToInt32(Console.ReadLine());
@@ -348,7 +301,7 @@ public class Tasks
         Console.WriteLine("Результат: " + result);
         Console.ReadLine();
     }
-    static void Task27()
+    public static void Task27()
     {
         Console.Write("Введите число: ");
         int number = Convert.ToInt32(Console.ReadLine());
@@ -365,7 +318,7 @@ public class Tasks
         Console.WriteLine("Сумма цифр: " + sum);
         Console.ReadLine();
     }
-    static void Main()
+    public static void Task29()
     {
         int[] array = new int[] { -2, 1, 7, 5, 19 };
 

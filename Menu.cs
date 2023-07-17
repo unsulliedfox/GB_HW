@@ -1,8 +1,8 @@
 using System;
 
-public class Menu
+public static class Menu
 {
-    public static void Main()
+    public static void ShowMenu()
     {
         int choice;
 
@@ -28,19 +28,59 @@ public class Menu
             Console.Write("Введите номер задачи (0-13): ");
             choice = Convert.ToInt32(Console.ReadLine());
 
-            Console.Clear();
-
-            if (choice >= 1 && choice <= 10)
-            {
-                Tasks.PerformTask(choice);
-            }
-            else if (choice != 0)
-            {
-                Console.WriteLine("Некорректный выбор. Попробуйте еще раз.");
-            }
-
             Console.WriteLine();
 
-        } while (choice != 0);
+            switch (choice)
+            {
+                case 1:
+                    Program.Task2();
+                    break;
+                case 2:
+                    Program.Task4();
+                    break;
+                case 3:
+                    Program.Task6();
+                    break;
+                case 4:
+                    Program.Task8();
+                    break;
+                case 5:
+                    Program.Task23();
+                    break;
+                case 6:
+                    Program.Task10();
+                    break;
+                case 7:
+                    Program.Task13();
+                    break;
+                case 8:
+                    Program.Task15();
+                    break;
+                case 9:
+                    Program.Task19();
+                    break;
+                case 10:
+                    Program.Task21();
+                    break;
+                case 11:
+                    Program.Task25();
+                    break;
+                case 12:
+                    Program.Task27();
+                    break;
+                case 13:
+                    Program.Task29();
+                    break;
+                case 0:
+                    Console.WriteLine("Программа завершена.");
+                    break;
+                default:
+                    Console.WriteLine("Некорректный выбор. Попробуйте еще раз.");
+                    break;
+            }
+            Console.WriteLine();
+        } while (choice !=0);
+
+        Console.ReadLine();
     }
 }
