@@ -1,76 +1,57 @@
 ﻿using System;
-
-class Program
+ 
+public class Tasks
 {
-    static void Main()
+    public static void PerformTask(int choice)
     {
-        int choice;
-
-        do
+        switch (choice)
         {
-            Console.WriteLine("Меню:");
-            Console.WriteLine("1. Задача 2: Найти максимальное и минимальное числа.");
-            Console.WriteLine("2. Задача 4: Найти максимальное число из трех введенных чисел.");
-            Console.WriteLine("3. Задача 6: Проверка числа на четность.");
-            Console.WriteLine("4. Задача 8: Вывести четные числа от 1 до N.");
-            Console.WriteLine("5. Задача 23: Вывести таблицу кубов чисел от 1 до N.");
-            Console.WriteLine("6. Задача 10: Вывести вторую цифру трехзначного числа.");
-            Console.WriteLine("7. Задача 13: С помощью деления вывести третью цифру заданного числа или сообщить, что третьей цифры нет.");
-            Console.WriteLine("8. Задача 15: Принимать на вход цифру, обозначающую день недели, и проверять, является ли этот день выходным.");
-            Console.WriteLine("9. Задача 19: Проверка пятизначного числа на палиндромность.");
-            Console.WriteLine("10. Задача 21: Нахождение расстояния в 3D пространстве между двумя точками координат.");
-            Console.WriteLine("0. Выход");
-            Console.WriteLine();
-
-            Console.Write("Введите номер задачи (0-10): ");
-            choice = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine();
-
-            switch (choice)
-            {
-                case 1:
-                    Task2();
-                    break;
-                case 2:
-                    Task4();
-                    break;
-                case 3:
-                    Task6();
-                    break;
-                case 4:
-                    Task8();
-                    break;
-                case 5:
-                    Task23();
-                    break;
-                case 6:
-                    Task10();
-                    break;
-                case 7:
-                    Task13();
-                    break;
-                case 8:
-                    Task15();
-                    break;
-                case 9:
-                    Task19();
-                    break;
-                case 10:
-                    Task21();
-                    break;
-                case 0:
-                    Console.WriteLine("Программа завершена.");
-                    break;
-                default:
-                    Console.WriteLine("Некорректный выбор. Попробуйте еще раз.");
-                    break;
-            }
-
-            Console.WriteLine();
-        } while (choice != 0);
-
-        Console.ReadLine();
+            case 1:
+                Task2();
+                break;
+            case 2:
+                Task4();
+                break;
+            case 3:
+                Task6();
+                break;
+            case 4:
+                Task8();
+                break;
+            case 5:
+                Task23();
+                break;
+            case 6:
+                Task10();
+                break;
+            case 7:
+                Task13();
+                break;
+            case 8:
+                Task15();
+                break;
+            case 9:
+                Task19();
+                break;
+            case 10:
+                Task21();
+                break;
+            case 11:
+                Task25();
+                break;
+            case 12:
+                Task27();
+                break;
+            case 13:
+                Task29();
+                break;
+            case 0:
+                Console.WriteLine("Программа завершена.");
+                break;
+            default:
+                Console.WriteLine("Некорректный выбор. Попробуйте еще раз.");
+                break;
+        }
     }
 
     static void Task2()
@@ -348,6 +329,50 @@ class Program
         double distance = Math.Sqrt(distanceSquared);
 
         return distance;
+    }
+    static void Task25()
+    {
+        Console.Write("Введите число A: ");
+        int A = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Введите число B: ");
+        int B = Convert.ToInt32(Console.ReadLine());
+
+        int result = 1;
+
+        for (int i = 1; i <= B; i++)
+        {
+            result *= A;
+        }
+
+        Console.WriteLine("Результат: " + result);
+        Console.ReadLine();
+    }
+    static void Task27()
+    {
+        Console.Write("Введите число: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        int sum = 0;
+
+        while (number != 0)
+        {
+            int digit = number % 10;
+            sum += digit;
+            number /= 10;
+        }
+
+        Console.WriteLine("Сумма цифр: " + sum);
+        Console.ReadLine();
+    }
+    static void Main()
+    {
+        int[] array = new int[] { -2, 1, 7, 5, 19 };
+
+        Array.Sort(array, (a, b) => Math.Abs(a).CompareTo(Math.Abs(b)));
+
+        Console.WriteLine("Отсортированный массив: " + string.Join(", ", array));
+        Console.ReadLine();
     }
   
 }
