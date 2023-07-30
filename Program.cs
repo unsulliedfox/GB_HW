@@ -327,5 +327,249 @@ class Program
         Console.WriteLine("Отсортированный массив: " + string.Join(", ", array));
         Console.ReadLine();
     }
+    public static void Task34()
+    {
+        // Создаем генератор случайных чисел
+        Random random = new Random();
+
+        // Создаем массив для хранения случайных трехзначных чисел
+        int[] numbers = new int[10]; // Можете изменить размер массива на сколько вам нужно
+
+        // Заполняем массив случайными трехзначными числами
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = random.Next(100, 1000); // Генерируем случайное трехзначное число от 100 до 999
+        }
+
+        // Показываем элементы массива
+        Console.WriteLine("Массив случайных трехзначных чисел:");
+        foreach (int number in numbers)
+        {
+            Console.Write(number + " ");
+        }
+
+        // Считаем количество четных чисел в массиве
+        int countEvenNumbers = 0;
+        foreach (int number in numbers)
+        {
+            if (number % 2 == 0)
+            {
+                countEvenNumbers++;
+            }
+        }
+
+        // Показываем количество четных чисел
+        Console.WriteLine("\nКоличество четных чисел в массиве: " + countEvenNumbers);
+
+        Console.ReadLine();
+    }
+    public static void Task36()
+    {
+        // Задаем размер массива
+        int size = 10;
+
+        // Создаем массив и заполняем случайными числами
+        int[] array = new int[size];
+        Random random = new Random();
+
+        for (int i = 0; i < size; i++)
+        {
+            array[i] = random.Next(100); // случайное число от 0 до 99
+        }
+
+        // Выводим массив на экран
+        Console.WriteLine("Массив:");
+        PrintArray(array);
+
+        // Находим сумму элементов с нечетными индексами
+        int sum = SumOfElementsWithOddIndex(array);
+
+        // Выводим результат на экран
+        Console.WriteLine("Сумма элементов с нечетными индексами: " + sum);
+    }
+
+    // Метод для вывода массива на экран
+    static void PrintArray(int[] arr)
+    {
+        foreach (var element in arr)
+        {
+            Console.Write(element + " ");
+        }
+        Console.WriteLine();
+    }
+
+    // Метод для нахождения суммы элементов с нечетными индексами
+    static int SumOfElementsWithOddIndex(int[] arr)
+    {
+        int sum = 0;
+        for (int i = 1; i < arr.Length; i += 2)
+        {
+            sum += arr[i];
+        }
+        return sum;
+    }
+    public static void Task38()
+    {
+        // Создаем массив с вещественными числами
+        double[] array = { 3.21, 7.04, 22.93, -2.71, 78.24 };
+
+        // Находим максимальный и минимальный элементы
+        double max = array[0];
+        double min = array[0];
+
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i] > max)
+            {
+                max = array[i];
+            }
+
+            if (array[i] < min)
+            {
+                min = array[i];
+            }
+        }
+
+        // Вычисляем разницу между максимальным и минимальным элементами
+        double diff = Math.Round(max - min, 2);
+
+        // Выводим результат на экран
+        Console.WriteLine("Массив:");
+        PrintArray(array);
+
+        Console.WriteLine("Максимальный элемент: " + max);
+        Console.WriteLine("Минимальный элемент: " + min);
+        Console.WriteLine("Разница между максимальным и минимальным элементами: " + diff);
+    }
+    // Метод для вывода массива на экран
+    static void PrintArray(double[] arr)
+    {
+        foreach (var element in arr)
+        {
+            Console.Write(element + " ");
+        }
+        Console.WriteLine();
+    }
+    public static void Task41()
+    {
+        Console.Write("Введите количество чисел (M): ");
+        int M = int.Parse(Console.ReadLine());
+
+        int count = 0;
+
+        for (int i = 0; i < M; i++)
+        {
+            Console.Write("Введите число: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (number > 0)
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine("Количество чисел больше 0: " + count);
+    }
+    public static void Task43()
+    {
+        Console.Write("Введите значение k1: ");
+        double k1 = double.Parse(Console.ReadLine());
+
+        Console.Write("Введите значение b1: ");
+        double b1 = double.Parse(Console.ReadLine());
+
+        Console.Write("Введите значение k2: ");
+        double k2 = double.Parse(Console.ReadLine());
+
+        Console.Write("Введите значение b2: ");
+        double b2 = double.Parse(Console.ReadLine());
+
+        double x = (b2 - b1) / (k1 - k2);
+        double y = k1 * x + b1;
+
+        Console.WriteLine("Точка пересечения: (" + x + "; " + y + ")");
+    }
+    public static void Task47()
+    {
+        int m = 3;
+        int n = 4;
+        double[,] matrix = new double[m, n];
+        Random random = new Random();
+
+        // Заполнение двумерного массива случайными вещественными числами и округление до одного знака
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                matrix[i, j] = Math.Round(random.NextDouble() * 20 - 10, 1);
+            }
+        }
+
+        // Вывод двумерного массива
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Console.Write(matrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+    public static void Task50()
+    {
+        int[,] array = { { 1, 4, 7, 2 }, { 5, 9, 2, 3 }, { 8, 4, 2, 4 } };
+
+        Console.Write("Введите номер строки: ");
+        int rowIndex = Convert.ToInt32(Console.ReadLine()) - 1;
+
+        Console.Write("Введите номер столбца: ");
+        int columnIndex = Convert.ToInt32(Console.ReadLine()) - 1;
+
+        if (rowIndex >= 0 && rowIndex < array.GetLength(0) && columnIndex >= 0 && columnIndex < array.GetLength(1))
+        {
+            int element = array[rowIndex, columnIndex];
+            Console.WriteLine("Элемент с заданными индексами: " + element);
+        }
+        else
+        {
+            Console.WriteLine("Такого элемента не существует.");
+        }
+    }
+    public static void Task52()
+    {
+        int[,] array = { 
+            { 1, 4, 7, 2 }, 
+            { 5, 9, 2, 3 }, 
+            { 8, 4, 2, 4 }
+         };
+        int rows = array.GetLength(0);
+        int columns = array.GetLength(1);
+
+        double[] columnSums = new double[columns];
+
+        // Считаем суммы элементов в каждом столбце
+        for (int j = 0; j < columns; j++)
+        {
+            for (int i = 0; i < rows; i++)
+            {
+                columnSums[j] += array[i, j];
+            }
+        }
+
+        // Вычисляем среднее арифметическое для каждого столбца
+        double[] columnAverages = new double[columns];
+        for (int j = 0; j < columns; j++)
+        {
+            columnAverages[j] = columnSums[j] / rows;
+        }
+
+        // Выводим результат
+        Console.WriteLine("Среднее арифметическое каждого столбца:");
+        for (int j = 0; j < columns; j++)
+        {
+            Console.Write(Math.Round(columnAverages[j], 1) + " ");
+        }
+        Console.WriteLine();
+    }
   
 }

@@ -22,10 +22,18 @@ public static class Menu
             Console.WriteLine("11. Задача 25: Возведение числа A в степень B.");
             Console.WriteLine("12. Задача 27: Сумма цифр числа.");
             Console.WriteLine("13. Задача 29: Сортировка массива по модулю.");
+            Console.WriteLine("14. Задача 34: Чётные числа в массиве, заполненном случайными положительными трёхзначными числами.");
+            Console.WriteLine("15. Задача 36: Сумма элементов с нечётными индексами в одномерном массиве.");
+            Console.WriteLine("16. Задача 38: Разница между максимальным и минимальным элементами массива вещественных чисел.");
+            Console.WriteLine("17. Задача 41: Посчитать, сколько чисел больше 0 ввёл пользователь.");
+            Console.WriteLine("18. Задача 43: Найти точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.");
+            Console.WriteLine("19. Задача 47: Двумерный массив m×n с вещественными числами (округленными до одного знака).");
+            Console.WriteLine("20. Задача 50: Программа, принимающая индексы элемента в двумерном массиве и возвращающая его значение или указание об отсутствии элемента.");
+            Console.WriteLine("21. Задача 52: Нахождение среднего арифметического элементов в каждом столбце двумерного массива.");
             Console.WriteLine("0. Выход");
             Console.WriteLine();
 
-            Console.Write("Введите номер задачи (0-13): ");
+            Console.Write("Введите номер задачи (0-21): ");
             choice = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
@@ -70,6 +78,30 @@ public static class Menu
                     break;
                 case 13:
                     Program.Task29();
+                    break;
+                case 14:
+                    Program.Task34();
+                    break;
+                case 15:
+                    Program.Task36();
+                    break;
+                case 16:
+                    Program.Task38();
+                    break;
+                case 17:
+                    Program.Task41();
+                    break;
+                case 18:
+                    Program.Task43();
+                    break;
+                case 19:
+                    Program.Task47();
+                    break;
+                case 20:
+                    Program.Task50();
+                    break;
+                case 21:
+                    Program.Task52();
                     break;
                 case 0:
                     Console.WriteLine("Программа завершена.");
